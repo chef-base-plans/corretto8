@@ -185,7 +185,7 @@ You can now use the binary as normal.  For example:
 ``/bin/java -version`` or ``java -version``
 
 ```bash
-$ java --help
+$ java -version
 openjdk version "1.8.0_202"
 OpenJDK Runtime Environment Corretto-8.202.08.2 (build 1.8.0_202-b08)
 OpenJDK 64-Bit Server VM Corretto-8.202.08.2 (build 25.202-b08, mixed mode)
