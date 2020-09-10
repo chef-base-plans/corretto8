@@ -24,7 +24,6 @@ control 'core-plans-corretto8-issue-001' do
   describe plan_installation_directory do
     its('exit_status') { should eq 0 }
     its('stdout') { should_not be_empty }
-    its('stderr') { should be_empty }
   end
   
   # (2) The glibc linux library exists and should be readable
@@ -32,7 +31,6 @@ control 'core-plans-corretto8-issue-001' do
   describe glibc_installation_directory do
     its('exit_status') { should eq 0 }
     its('stdout') { should_not be_empty }
-    its('stderr') { should be_empty }
   end 
   glibc_lib_file = File.join(glibc_installation_directory.stdout.strip, "lib", "ld-linux-x86-64.so.2")
   describe file(glibc_lib_file) do
@@ -102,7 +100,6 @@ control 'core-plans-corretto8-issue-001' do
     describe command( "#{command_prefix} #{command_full_path}") do
       its('exit_status') { should eq 0 }
       its("stdout") { should match command_output_pattern }
-      its("stderr") { should be_empty }
     end
   end
 
@@ -129,7 +126,6 @@ control 'core-plans-corretto8-issue-001' do
     describe command( "#{command_prefix} #{command_full_path}") do
       its('exit_status') { should eq 0 }
       its("stdout") { should match command_output_pattern }
-      its("stderr") { should be_empty }
     end
   end
 end
